@@ -6,7 +6,7 @@ specifiers:
   '@swc/jest': 0.2.24
   '@tksst/eslint-config': 4.2.0
   '@tksst/prettier-config': 1.1.0
-  '@tksst/typescript-starter-configs': 1.0.0
+  '@tksst/typescript-starter-configs': 2.0.0
   '@types/jest': 29.2.4
   '@typescript-eslint/eslint-plugin': 5.46.0
   '@typescript-eslint/parser': 5.46.0
@@ -31,7 +31,7 @@ devDependencies:
   '@swc/jest': 0.2.24_@swc+core@1.3.22
   '@tksst/eslint-config': 4.2.0_ih6mm46oeoqmactbe4v7fjjx6e
   '@tksst/prettier-config': 1.1.0_prettier@2.8.1
-  '@tksst/typescript-starter-configs': 1.0.0
+  '@tksst/typescript-starter-configs': 2.0.0
   '@types/jest': 29.2.4
   '@typescript-eslint/eslint-plugin': 5.46.0_5mle7isnkfgjmrghnnczirv6iy
   '@typescript-eslint/parser': 5.46.0_ha6vam6werchizxrnqvarmz2zu
@@ -1250,8 +1250,8 @@ packages:
       prettier: 2.8.1
     dev: true
 
-  /@tksst/typescript-starter-configs/1.0.0:
-    resolution: {integrity: sha512-5/eFgDRWWTfclTkQCIr+FoKiYX8N7eGYsZ6ouKReSywZTTTbduwlCaPmP07SI0/KpjOBrdXrqsoi2n59aE80jg==}
+  /@tksst/typescript-starter-configs/2.0.0:
+    resolution: {integrity: sha512-r7QTh96DLNOUyj7b1VYwySv5Uz0CM/QZgj8WKWGnh630umeZ/dJDR21ZwHfKozXFSm7bxhntMKt/qR+y9K0O4w==}
     hasBin: true
     dev: true
 
