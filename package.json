@@ -11,20 +11,21 @@
     "email": "takashi@tks.st",
     "url": "https://www.tks.st/"
   },
-  "type": "module",
+  "type": "commonjs",
+  "main": "./dist/lib/index.js",
   "exports": {
-    "import": "./dist/lib/index.js",
-    "require": "./dist/lib/index.cjs"
+    "import": "./dist/lib/index.mjs",
+    "require": "./dist/lib/index.js"
   },
   "types": "./dist/lib/index.d.ts",
   "bin": {
-    "typescript-node-starter": "./dist/bin/index.js"
+    "typescript-node-starter": "./dist/bin/index.mjs"
   },
   "scripts": {
     "clean": "tss-rmrf ./dist/",
     "build": "run-s --continue-on-error clean build:*",
-    "build:lib": "tsup --config ./tsup.config.lib.js",
-    "build:bin": "tsup --config ./tsup.config.bin.js",
+    "build:lib": "tsup --config ./tsup.config.lib.mjs",
+    "build:bin": "tsup --config ./tsup.config.bin.mjs",
     "prepack": "pnpm build",
     "watch": "npm-run-all clean --parallel --continue-on-error --print-label watch:*",
     "watch:lib": "pnpm build:lib --watch",
