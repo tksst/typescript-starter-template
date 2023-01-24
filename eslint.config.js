@@ -1,25 +1,26 @@
-/** @type {import('eslint').Linter.Config} */
+const eslintConfig = require("@tksst/eslint-config").default;
+const globals = require("globals");
 
-module.exports = {
-    root: true,
-    env: {
-        // Your project environment settings here.
-        // See ESLint document of "Specifying Environments":
-        // https://eslint.org/docs/user-guide/configuring/language-options#specifying-environments
-
-        // example:
-        es2022: true,
-        node: true,
-        jest: true,
+module.exports = [
+    {
+        ignores: ["dist/**"],
     },
-    parserOptions: {
-        // Your project environment settings here.
-        // See ESLint document of "Specifying Parser Options":
-        // https://eslint.org/docs/latest/user-guide/configuring/language-options#specifying-parser-options
-
-        // example:
-        sourceType: "module",
-        ecmaVersion: "latest",
+    {
+        languageOptions: {
+            globals: {
+                // If your code runs on Node.js
+                ...globals.node,
+            },
+        },
     },
-    extends: "@tksst",
-};
+    {
+        files: ["**/*.test.js"],
+        languageOptions: {
+            globals: {
+                // If your test runs on Jest
+                ...globals.jest,
+            },
+        },
+    },
+    ...eslintConfig,
+];
