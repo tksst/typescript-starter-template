@@ -4,7 +4,7 @@ specifiers:
   '@secretlint/secretlint-rule-preset-recommend': 6.0.2
   '@swc/core': 1.3.26
   '@swc/jest': 0.2.24
-  '@tksst/eslint-config': 5.0.0
+  '@tksst/eslint-config': 6.0.0
   '@tksst/prettier-config': 1.1.0
   '@tksst/typescript-starter-configs': 2.1.0
   '@types/jest': 29.2.5
@@ -26,7 +26,7 @@ devDependencies:
   '@secretlint/secretlint-rule-preset-recommend': 6.0.2
   '@swc/core': 1.3.26
   '@swc/jest': 0.2.24_@swc+core@1.3.26
-  '@tksst/eslint-config': 5.0.0_umb74d4ein6cfwbwpp6twuh3h4
+  '@tksst/eslint-config': 6.0.0_umb74d4ein6cfwbwpp6twuh3h4
   '@tksst/prettier-config': 1.1.0_prettier@2.8.3
   '@tksst/typescript-starter-configs': 2.1.0
   '@types/jest': 29.2.5
@@ -1215,8 +1215,8 @@ packages:
       '@textlint/ast-node-types': 12.3.0
     dev: true
 
-  /@tksst/eslint-config/5.0.0_umb74d4ein6cfwbwpp6twuh3h4:
-    resolution: {integrity: sha512-SYQWWtGxhnLhCMRpArVIuhbHU3rpIMAoOUTInEOtY5GS8bgkprW9lI8vaE3C2CP6f8STL5GQUn70Rt+8jlXYBg==}
+  /@tksst/eslint-config/6.0.0_umb74d4ein6cfwbwpp6twuh3h4:
+    resolution: {integrity: sha512-CRA2SfuUlqaVYSmTo7EfVQ6d/33ueNUtmEyzYNAIn03oGbOK08Gp2wwdRG/4BR5wf8sADyuwDnnVraOOs5En9A==}
     engines: {node: '>= 12'}
     peerDependencies:
       eslint: ^8.27.0
@@ -1229,6 +1229,7 @@ packages:
       eslint-config-prettier: 8.6.0_eslint@8.31.0
       eslint-plugin-jest: 27.2.1_yxgwrec6z7vijxrh3cz6hdx5je
       eslint-plugin-simple-import-sort: 9.0.0_eslint@8.31.0
+      globals: 13.19.0
     transitivePeerDependencies:
       - eslint-plugin-import
       - jest
