@@ -11,15 +11,14 @@
     "email": "takashi@tks.st",
     "url": "https://www.tks.st/"
   },
-  "type": "commonjs",
-  "main": "./dist/lib/index.js",
+  "type": "module",
   "exports": {
-    "import": "./dist/lib/index.mjs",
-    "require": "./dist/lib/index.js"
+    "import": "./dist/lib/index.js",
+    "require": "./dist/lib/index.cjs"
   },
   "types": "./dist/lib/index.d.ts",
   "bin": {
-    "typescript-node-starter": "./dist/bin/index.mjs"
+    "typescript-node-starter": "./dist/bin/index.js"
   },
   "scripts": {
     "clean": "tss-rmrf ./dist/",

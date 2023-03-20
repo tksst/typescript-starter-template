@@ -1,3 +1,3 @@
-const { preset } = require("@tksst/eslint-config");
+import { preset } from "@tksst/eslint-config";
 
-module.exports = preset.typeScript({ jsIsCjs: true });
+export default preset.typeScript();
