@@ -12,8 +12,40 @@ on:
 
 jobs:
   build-test:
-    name: Build, Lint and Test
-    uses: tksst/github-actions-workflows/.github/workflows/nodejs-pnpm.yml@6495ac6b96f806e689d068ea293b2e820dd14104
-    permissions:
-      actions: write
-      contents: read
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - windows-latest
+        node-version:
+          - 14
+          - 16
+          - 18
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout the source
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+
+      - name: Setup pnpm
+        uses: tksst/action-setup-pnpm@8012df8ab95e9d83962fac803feb9d3cdb9501b1
+        with:
+          nodejs_bundled: true
+
+      - name: Setup a specific version of Node.js
+        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: pnpm-commands execution
+        # Specify bash explicitly, since the default shell on Windows is powershell.
+        shell: bash
+        run: |
+          pnpm build
+          pnpm test
+          pnpm lint
