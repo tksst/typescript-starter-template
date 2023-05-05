@@ -46,7 +46,7 @@
     "@swc/jest": "0.2.26",
     "@tksst/eslint-config": "7.0.8",
     "@tksst/prettier-config": "1.1.0",
-    "@tksst/typescript-starter-configs": "2.1.0",
+    "@tksst/typescript-starter-configs": "3.1.0",
     "@types/jest": "29.5.1",
     "better-typescript-lib": "2.3.0",
     "eslint": "8.38.0",
