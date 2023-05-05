@@ -1,4 +1,4 @@
-import { binOptions } from "@tksst/typescript-starter-configs/tsup-config.mjs";
+import { binOptions } from "@tksst/project-configs/tsup-config.mjs";
 import { defineConfig } from "tsup";
 
 export default defineConfig({
