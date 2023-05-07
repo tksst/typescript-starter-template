@@ -13,7 +13,7 @@ on:
 jobs:
   build-test:
     name: Build, Lint and Test
-    uses: tksst/github-actions-workflows/.github/workflows/nodejs-pnpm.yml@4519d724fd3e9b0295f9407d5b48f019d1d43033
+    uses: tksst/github-actions-workflows/.github/workflows/nodejs-pnpm.yml@dd41bcef2675d1198511e6ab772eb8d07a0ccd57
     permissions:
       actions: write
       contents: read
