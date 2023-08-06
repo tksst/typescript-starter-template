@@ -44,7 +44,7 @@
     "@secretlint/secretlint-rule-preset-recommend": "7.0.3",
     "@swc/core": "1.3.71",
     "@swc/jest": "0.2.27",
-    "@tksst/eslint-config": "9.1.0",
+    "@tksst/eslint-config": "10.0.0",
     "@tksst/prettier-config": "1.1.0",
     "@tksst/project-configs": "4.0.0",
     "@types/jest": "29.5.3",
