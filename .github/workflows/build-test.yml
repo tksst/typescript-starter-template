@@ -5,10 +5,10 @@ on:
   workflow_dispatch:
   pull_request:
   push:
-    # branches:
-    # branches-ignore:
-    #  - master
-    #  - alpha
+    branches-ignore:
+      # When you enable the release workflow, change the line below to your main branch
+      # to avoid the duplicate action worktime.
+      - change-this-to-default-branch-when-the-release-workflow-enabled
 
 jobs:
   build-test:

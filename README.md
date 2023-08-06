@@ -28,6 +28,17 @@ Watching mode of `build`
 
 Testing by [Jest](https://jestjs.io/)
 
+## changesets
+
+This template is almost ready for using [changesets](https://github.com/changesets/changesets).
+To enable changesets for releasing to npm registry:
+
+- add `NPM_TOKEN` to Actions secrets of the repository
+- modify [`.github/workflows/release.yml`](.github/workflows/release.yml) to enable the release workflow
+- modify [`.github/workflows/build-test.yml`](.github/workflows/release.yml)
+- modify [`.changeset/config.json`](.changeset/config.json) if you are using a default branch name other than `main`.
+- (Optional) install [changeset-bot](https://github.com/apps/changeset-bot)
+
 ## Note on testing with Jest
 
 Currently, ESM support in Jest is experimental. Therefore, for this project, Jest is set up in the traditional CJS mode. However, this does not allow us to use external ESM libraries. To run Jest in ESM mode, do the following:
