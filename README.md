@@ -28,6 +28,12 @@ Watching mode of `build`
 
 Testing by [Jest](https://jestjs.io/)
 
+## scripts for project starter
+
+There are scripts in the `scripts' directory to customize a new project.
+
+Once the project is started, these scripts should be deleted.
+
 ## changesets
 
 This template is almost ready for using [changesets](https://github.com/changesets/changesets).
