@@ -41,5 +41,5 @@ await Promise.all([
     modifyPackageJson((obj) => {
         obj.license = "Apache-2.0";
     }),
-    fs.rm("./scripts/license-to-apache.mjs", { force: true }),
+    fs.rm("./scripts/change-license-to-apache.mjs", { force: true }),
 ]);

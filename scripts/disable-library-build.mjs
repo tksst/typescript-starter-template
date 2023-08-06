@@ -9,7 +9,7 @@ checkGitStatus();
 
 await Promise.all([
     fs.rm("./tsup.config.lib.mjs", { force: true }),
-    fs.rm("./scripts/disable-library-building.mjs", { force: true }),
+    fs.rm("./scripts/disable-library-build.mjs", { force: true }),
     modifyPackageJson((obb) => {
         delete obb.exports;
         delete obb.types;

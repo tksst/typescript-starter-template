@@ -9,7 +9,7 @@ checkGitStatus();
 
 await Promise.all([
     fs.rm("./tsup.config.bin.mjs", { force: true }),
-    fs.rm("./scripts/disable-executable-building.mjs", { force: true }),
+    fs.rm("./scripts/disable-executable-build.mjs", { force: true }),
     fs.rm("./src/bin/", { recursive: true, force: true }),
     modifyPackageJson((obj) => {
         delete obj.bin;
