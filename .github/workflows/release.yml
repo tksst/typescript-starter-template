@@ -1,4 +1,4 @@
-name: Test and Release
+name: Build, Lint, Test and Release
 on:
   push:
     branches:
@@ -7,11 +7,11 @@ on:
       - change-this-to-default-branch-to-enable-this-workflow
 
 jobs:
-  build-test:
-    uses: ./.github/workflows/build-test.yml
+  build-lint-test:
+    uses: ./.github/workflows/build-lint-test.yml
 
   release:
-    needs: build-test
+    needs: build-lint-test
 
     permissions:
       # create a PR
