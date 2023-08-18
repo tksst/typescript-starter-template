@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: tksst/github-actions-workflows/actions/setup-pnpm-project@118c76c1845aa9c8974dd0664742f4c46ed25304
+      - uses: tksst/github-actions-workflows/actions/setup-pnpm-project@4d3055bc0622325eb8d538659de8c78957a73a2a
         with:
           node-version: 18
 
