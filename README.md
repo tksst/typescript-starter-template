@@ -43,6 +43,7 @@ To enable changesets for releasing to npm registry:
 - modify [`.github/workflows/release.yml`](.github/workflows/release.yml) to enable the release workflow
 - modify [`.github/workflows/build-test.yml`](.github/workflows/release.yml)
 - modify [`.changeset/config.json`](.changeset/config.json) if you are using a default branch name other than `main`.
+- modify [`.prettierignore`](.prettierignore) to ignore `/CHANGELOG.md` with prettier
 - (Optional) install [changeset-bot](https://github.com/apps/changeset-bot)
 
 ## Note on testing with Jest
