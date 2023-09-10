@@ -44,6 +44,7 @@ To enable changesets for releasing to npm registry:
 - modify [`.github/workflows/build-test.yml`](.github/workflows/release.yml)
 - modify [`.changeset/config.json`](.changeset/config.json) if you are using a default branch name other than `main`.
 - modify [`.prettierignore`](.prettierignore) to ignore `/CHANGELOG.md` with prettier
+- allow GitHub Actions to create Pull Request. [See this image.](https://github.com/tksst/typescript-starter-template/blob/4f0f98caf9ee49d86e34986e2c15a5346167cd26/workflow-permissions-about-pull-requests.webp?raw=true)
 - (Optional) install [changeset-bot](https://github.com/apps/changeset-bot)
 
 ## Note on testing with Jest
