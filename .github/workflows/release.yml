@@ -9,6 +9,9 @@ on:
 jobs:
   build-lint-test:
     uses: ./.github/workflows/build-lint-test.yml
+    permissions:
+      actions: write
+      contents: read
 
   release:
     needs: build-lint-test
