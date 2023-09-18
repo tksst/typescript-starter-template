@@ -11,9 +11,103 @@ on:
       - change-this-to-default-branch-when-the-release-workflow-enabled
 
 jobs:
-  build-test:
-    name: Build, Lint and Test
-    uses: tksst/github-actions-workflows/.github/workflows/nodejs-pnpm.yml@71e075efd4b006e33214503832e072ba22fc848b
+  check-skippable:
+    continue-on-error: true
+    runs-on: ubuntu-22.04
     permissions:
       actions: write
       contents: read
+    outputs:
+      skippable: ${{ steps.check.outputs.should_skip }}
+    steps:
+      - id: check
+        uses: fkirc/skip-duplicate-actions@12aca0a884f6137d619d6a8a09fcc3406ced5281 # v5.3.0
+
+  test:
+    name: Test
+    needs: check-skippable
+    if: needs.check-skippable.outputs.skippable != 'true'
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - ubuntu-22.04
+          - windows-latest
+        node-version:
+          - 18
+          - 20
+        experimental:
+          - false
+        include:
+          - os: ubuntu-22.04
+            node-version: 21-nightly
+            experimental: true
+          - os: windows-latest
+            node-version: 21-nightly
+            experimental: true
+
+    runs-on: ${{ matrix.os }}
+    continue-on-error: ${{ matrix.experimental }}
+
+    steps:
+      - name: Checkout the source
+        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
+        with:
+          show-progress: false
+          submodules: recursive
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@d882d12c64e032187b2edb46d3a0d003b7a43598 # v2.4.0
+        with:
+          standalone: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3.8.1
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - run: pnpm test
+
+  build-lint:
+    name: Build and Lint
+    needs: check-skippable
+    if: needs.check-skippable.outputs.skippable != 'true'
+
+    # Using matrix strategy, OS and Node version will be displayed in a title of a job.
+    strategy:
+      matrix:
+        os:
+          - ubuntu-22.04
+        node-version:
+          - 18
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout the source
+        uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
+        with:
+          show-progress: false
+          submodules: recursive
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@d882d12c64e032187b2edb46d3a0d003b7a43598 # v2.4.0
+        with:
+          standalone: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3.8.1
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - run: pnpm build
+
+      - run: pnpm lint
