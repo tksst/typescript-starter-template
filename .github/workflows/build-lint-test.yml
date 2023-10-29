@@ -36,14 +36,15 @@ jobs:
         node-version:
           - 18
           - 20
+          - 21
         experimental:
           - false
         include:
           - os: ubuntu-22.04
-            node-version: 21-nightly
+            node-version: 22-nightly
             experimental: true
           - os: windows-latest
-            node-version: 21-nightly
+            node-version: 22-nightly
             experimental: true
 
     runs-on: ${{ matrix.os }}
@@ -83,6 +84,7 @@ jobs:
         os:
           - ubuntu-22.04
         node-version:
+          # oldest LTS
           - 18
 
     runs-on: ${{ matrix.os }}
