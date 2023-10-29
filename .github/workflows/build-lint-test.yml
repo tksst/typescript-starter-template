@@ -111,3 +111,12 @@ jobs:
       - run: pnpm build
 
       - run: pnpm lint
+
+  action-timeline:
+    needs:
+      - check-skippable
+      - test
+      - build-lint
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: Kesin11/actions-timeline@fbbb6f71498dbdb3af862970133257532cd48054 # v1.0.0
