@@ -22,6 +22,7 @@ jobs:
     steps:
       - id: check
         uses: fkirc/skip-duplicate-actions@f75f66ce1886f00957d99748a42c724f4330bdcf # v5.3.1
+      - run: echo forkdemo on check-skippable
 
   test:
     name: Test
@@ -90,6 +91,8 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
+      - run: echo forkdemo on check-skippable
+
       - name: Checkout the source
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
