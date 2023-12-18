@@ -70,7 +70,7 @@ jobs:
           standalone: true
 
       - name: Setup Node.js
-        uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65 # v4.0.0
+        uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8 # v4.0.1
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
@@ -112,7 +112,7 @@ jobs:
           standalone: false
 
       - name: Setup Node.js
-        uses: actions/setup-node@8f152de45cc393bb48ce5d89d36b731f54556e65 # v4.0.0
+        uses: actions/setup-node@b39b52d1213e96004bfcb1c61a8a6fa8ab84f3e8 # v4.0.1
         with:
           node-version: ${{ matrix.node-version }}
           cache: pnpm
@@ -131,4 +131,4 @@ jobs:
       - build-lint
     runs-on: ubuntu-22.04
     steps:
-      - uses: Kesin11/actions-timeline@37c6155f2e2fc1a056abe1108c9ca61975a6e4f8 # v2.0.0
+      - uses: Kesin11/actions-timeline@baa62e018ca5504e2d617502ce1eacf9171e757a # v2.0.1
