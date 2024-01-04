@@ -27,6 +27,9 @@ jobs:
     name: Test
     needs: check-skippable
     if: needs.check-skippable.outputs.skippable != 'true'
+    permissions:
+      contents: read
+      actions: read
     strategy:
       fail-fast: false
       matrix:
@@ -87,6 +90,9 @@ jobs:
     name: Build and Lint
     needs: check-skippable
     if: needs.check-skippable.outputs.skippable != 'true'
+    permissions:
+      contents: read
+      actions: read
 
     # Using matrix strategy, OS and Node version will be displayed in a title of a job.
     strategy:
@@ -133,5 +139,7 @@ jobs:
       - test
       - build-lint
     runs-on: ubuntu-22.04
+    permissions:
+      actions: read
     steps:
       - uses: Kesin11/actions-timeline@baa62e018ca5504e2d617502ce1eacf9171e757a # v2.0.1
