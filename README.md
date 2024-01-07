@@ -90,9 +90,3 @@ The current versions of them do not act in the same way as the official TypeScri
 ts-node and esbuild-register have a different import resolution mechanism from the tsc and will not run if you use `.js` extension in the import statement.
 
 tsx is somewhat better than these, but I saw that it does not work well when importing CommonJs from ESM.
-
-## License
-
-These codes are licensed under CC0.
-
-[![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png "CC0")](https://creativecommons.org/publicdomain/zero/1.0/deed)
