@@ -18,7 +18,7 @@
   },
   "types": "./dist/lib/index.d.ts",
   "bin": {
-    "typescript-node-starter": "./dist/bin/index.js"
+    "your-package-name-here": "./dist/bin/index.js"
   },
   "scripts": {
     "clean": "tss-rmrf ./dist/",
