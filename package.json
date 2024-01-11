@@ -1,44 +1,15 @@
 {
-  "name": "your-package-name-here",
-  "version": "0.0.0-development",
-  "private": true,
-  "description": "description",
-  "homepage": "https://example.example/your-website",
-  "repository": "github:tksst/repository-name",
-  "license": "Apache-2.0",
-  "author": {
-    "name": "Takashi Sato",
-    "email": "takashi@tks.st",
-    "url": "https://www.tks.st/"
-  },
-  "type": "module",
-  "exports": {
-    "import": "./dist/lib/index.js",
-    "require": "./dist/lib/index.cjs"
-  },
-  "types": "./dist/lib/index.d.ts",
-  "bin": {
-    "typescript-node-starter": "./dist/bin/index.js"
-  },
+  "private": "true",
   "scripts": {
-    "clean": "tss-rmrf ./dist/",
-    "build": "run-s --continue-on-error clean build:*",
-    "build:lib": "tsup --config ./tsup.config.lib.mjs",
-    "build:bin": "tsup --config ./tsup.config.bin.mjs",
-    "prepack": "pnpm build",
-    "watch": "npm-run-all clean --parallel --continue-on-error --print-label watch:*",
-    "watch:lib": "pnpm build:lib --watch",
-    "watch:bin": "pnpm build:bin --watch",
-    "fix": "run-s --continue-on-error fix:*",
-    "fix:prettier": "pnpm lint:prettier --write",
-    "fix:eslint": "pnpm lint:eslint --fix",
-    "lint": "run-p --continue-on-error --print-label lint:*",
+    "build": "pnpm run --recursive --if-present build",
     "lint:prettier": "prettier --cache --check .",
-    "lint:eslint": "eslint --color .",
     "lint:secretlint": "secretlint --maskSecrets --secretlintignore .gitignore '**/*'",
-    "lint:tsc": "tsc --noEmit",
-    "test": "run-s test:*",
-    "test:unit": "jest --ci"
+    "lint:recursive": "pnpm run --recursive --if-present lint",
+    "lint": "run-p --continue-on-error --print-label lint:*",
+    "fix:prettier": "pnpm lint:prettier --write",
+    "fix:recursive": "pnpm run --recursive --if-present fix",
+    "fix": "run-s --continue-on-error fix:*",
+    "test": "pnpm run --recursive --if-present test"
   },
   "devDependencies": {
     "@changesets/cli": "2.27.1",
@@ -58,11 +29,5 @@
     "tsup": "8.0.1",
     "typescript": "5.3.3"
   },
-  "dependencies": {
-    "source-map-support": "0.5.21"
-  },
-  "packageManager": "pnpm@8.14.0",
-  "engines": {
-    "node": ">= 14"
-  }
+  "packageManager": "pnpm@8.14.0"
 }
