@@ -1,5 +1,10 @@
 {
-	"private": "true",
+  "private": "true",
+  "scripts": {
+    "lint:prettier": "prettier --cache --check .",
+	"lint:secretlint": "secretlint --maskSecrets --secretlintignore .gitignore '**/*'",
+    "fix:prettier": "pnpm lint:prettier --write"
+  },
   "devDependencies": {
     "@changesets/cli": "2.27.1",
     "@secretlint/secretlint-rule-preset-recommend": "8.1.0",
