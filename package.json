@@ -1,9 +1,15 @@
 {
   "private": "true",
   "scripts": {
+    "build": "pnpm run --recursive --if-present build",
     "lint:prettier": "prettier --cache --check .",
-	"lint:secretlint": "secretlint --maskSecrets --secretlintignore .gitignore '**/*'",
-    "fix:prettier": "pnpm lint:prettier --write"
+    "lint:secretlint": "secretlint --maskSecrets --secretlintignore .gitignore '**/*'",
+    "lint:recursive": "pnpm run --recursive --if-present lint",
+    "lint": "run-p --continue-on-error --print-label lint:*",
+    "fix:prettier": "pnpm lint:prettier --write",
+    "fix:recursive": "pnpm run --recursive --if-present fix",
+    "fix": "run-s --continue-on-error fix:*",
+    "test": "pnpm run --recursive --if-present test"
   },
   "devDependencies": {
     "@changesets/cli": "2.27.1",
