@@ -1,3 +1,4 @@
+import { describe, expect, it } from "vitest";
 // import { main } from "./main.js";
 
 describe("main()", () => {

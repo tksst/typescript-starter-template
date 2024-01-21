@@ -35,7 +35,7 @@
     "lint:eslint": "eslint --color .",
     "lint:tsc": "tsc --noEmit",
     "test": "run-s test:*",
-    "test:unit": "jest --ci"
+    "test:unit": "vitest run --coverage"
   },
   "dependencies": {
     "source-map-support": "0.5.21"
