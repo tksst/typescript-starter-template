@@ -17,6 +17,7 @@ jobs:
     permissions:
       actions: write
       contents: read
+    timeout-minutes: 10
     outputs:
       skippable: ${{ steps.check.outputs.should_skip }}
     steps:
@@ -30,6 +31,7 @@ jobs:
     permissions:
       contents: read
       actions: read
+    timeout-minutes: 10
     strategy:
       fail-fast: false
       matrix:
@@ -93,6 +95,7 @@ jobs:
     permissions:
       contents: read
       actions: read
+    timeout-minutes: 10
 
     # Using matrix strategy, OS and Node version will be displayed in a title of a job.
     strategy:
@@ -141,5 +144,6 @@ jobs:
     runs-on: ubuntu-22.04
     permissions:
       actions: read
+    timeout-minutes: 10
     steps:
       - uses: Kesin11/actions-timeline@40b912d44677e158feec8015d092b5428f9c8247 # v2.0.2
