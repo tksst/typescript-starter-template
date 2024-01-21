@@ -1,6 +1,7 @@
 {
   "private": "true",
   "scripts": {
+    "prepare": "husky install",
     "build": "pnpm run --recursive --if-present build",
     "lint:prettier": "prettier --cache --check .",
     "lint:secretlint": "secretlint --maskSecrets --secretlintignore .gitignore '**/*'",
@@ -20,6 +21,8 @@
     "@vitest/coverage-v8": "1.2.1",
     "better-typescript-lib": "2.6.0",
     "eslint": "8.56.0",
+    "husky": "8.0.3",
+    "lint-staged": "15.2.0",
     "npm-run-all2": "6.1.1",
     "prettier": "3.2.4",
     "secretlint": "8.1.0",
@@ -27,5 +30,11 @@
     "typescript": "5.3.3",
     "vitest": "1.2.1"
   },
-  "packageManager": "pnpm@8.14.1"
+  "packageManager": "pnpm@8.14.1",
+  "lint-staged": {
+    "*": [
+      "prettier --cache --check",
+      "secretlint"
+    ]
+  }
 }
