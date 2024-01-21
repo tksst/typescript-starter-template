@@ -33,9 +33,7 @@
     "fix:eslint": "pnpm lint:eslint --fix",
     "lint": "run-p --continue-on-error --print-label lint:*",
     "lint:eslint": "eslint --color .",
-    "lint:tsc": "tsc --noEmit",
-    "test": "run-s test:*",
-    "test:unit": "vitest run --coverage"
+    "lint:tsc": "tsc --noEmit"
   },
   "dependencies": {
     "source-map-support": "0.5.21"
