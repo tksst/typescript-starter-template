@@ -22,11 +22,15 @@ A template project for javascript library (for browsers or Node.js) and/or execu
 
 ### `pnpm test`
 
-Testing by [Jest](https://jestjs.io/)
+Testing by [Vitest](https://vitest.dev/)
 
 ### `pnpm watch` (in each packages/\* directory)
 
 Watching mode of `build`
+
+## Note about Vitest
+
+Sometimes the [test hangs due to problems outside of Vitest](https://github.com/vitest-dev/vitest/issues/2008#issuecomment-1871066901). In that case, it can be fixed by vitest.config.ts with `pool: "forks"`.
 
 ## scripts for project starter
 
@@ -46,40 +50,6 @@ To enable changesets for releasing to npm registry:
 - modify [`.prettierignore`](.prettierignore) to ignore `/CHANGELOG.md` with prettier
 - allow GitHub Actions to create Pull Request. [See this image.](https://github.com/tksst/typescript-starter-template/blob/4f0f98caf9ee49d86e34986e2c15a5346167cd26/workflow-permissions-about-pull-requests.webp?raw=true)
 - (Optional) install [changeset-bot](https://github.com/apps/changeset-bot)
-
-## Note on testing with Jest
-
-Currently, ESM support in Jest is experimental. Therefore, for this project, Jest is set up in the traditional CJS mode. However, this does not allow us to use external ESM libraries. To run Jest in ESM mode, do the following:
-
-### 1. Enable VM Module
-
-Execute node with --experimental-vm-modules on testing by jest.
-On package.json npm scripts:
-
-```json
-"test:unit": "NODE_OPTIONS=--experimental-vm-modules npx jest"
-```
-
-If you run it on windows, you can use [cross-env](https://github.com/kentcdodds/cross-env):
-
-```json
-"test:unit": "cross-env NODE_OPTIONS=--experimental-vm-modules npx jest"
-```
-
-### 2. Modify jest.config.cjs
-
-Tell Jest to run the `.ts` file as an ESM.
-
-Modify jest.config.cjs like this:
-
-```javascript
-module.exports = {
-  ...require("@tksst/typescript-starter/jest.config.cjs"),
-  extensionsToTreatAsEsm: [".ts"]
-};
-```
-
-Note that it seems that @swc/jest automatically detects the ESM mode and changes the output format.
 
 ## Note about ts-node or something
 
