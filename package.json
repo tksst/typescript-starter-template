@@ -1,7 +1,7 @@
 {
   "private": "true",
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky",
     "build": "pnpm run --recursive --if-present build",
     "lint:prettier": "prettier --cache --check .",
     "lint:secretlint": "secretlint --maskSecrets --secretlintignore .gitignore '**/*'",
