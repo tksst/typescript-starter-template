@@ -16,7 +16,6 @@
     "import": "./dist/lib/index.js",
     "require": "./dist/lib/index.cjs"
   },
-  "types": "./dist/lib/index.d.ts",
   "bin": {
     "your-package-name-here": "./dist/bin/index.js"
   },
