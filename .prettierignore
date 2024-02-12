@@ -1,3 +1,5 @@
 /pnpm-lock.yaml
 # To use changesets, enable the following line
-#/CHANGELOG.md
+#/packages/*//CHANGELOG.md
+# changesets/action will change and commit this file, and git commit may fail due to hooks (.husky)
+#/.changeset/pre.json
