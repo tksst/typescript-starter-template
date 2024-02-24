@@ -141,6 +141,7 @@ jobs:
       - check-skippable
       - test
       - build-lint
+    continue-on-error: true
     runs-on: ubuntu-22.04
     permissions:
       actions: read
