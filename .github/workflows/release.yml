@@ -6,6 +6,8 @@ on:
       # To enable this feature, change the line below
       - change-this-to-default-branch-to-enable-this-workflow
 
+concurrency: release
+
 jobs:
   build-lint-test:
     uses: ./.github/workflows/build-lint-test.yml
