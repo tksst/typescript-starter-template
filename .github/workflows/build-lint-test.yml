@@ -141,6 +141,8 @@ jobs:
       - check-skippable
       - test
       - build-lint
+    # Runs even when the previous job was in error
+    if: ${{ always() }}
     continue-on-error: true
     runs-on: ubuntu-22.04
     permissions:
