@@ -19,6 +19,8 @@ jobs:
     needs: build-lint-test
 
     permissions:
+      # Uncommment the following line if you enable a package provenance
+      # id-token: write
       # create a PR
       contents: write
       pull-requests: write
