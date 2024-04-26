@@ -40,7 +40,7 @@ jobs:
         node-version:
           - 18
           - 20
-          - 21
+          - 22
         experimental:
           - false
         include:
@@ -53,7 +53,7 @@ jobs:
             node-version: 20
             experimental: false
           - os: ubuntu-22.04
-            node-version: 22-nightly
+            node-version: 23-nightly
             experimental: true
 
     runs-on: ${{ matrix.os }}
