@@ -18,17 +18,17 @@
     "@tksst/eslint-config": "13.8.0",
     "@tksst/prettier-config": "1.1.0",
     "@tksst/project-configs": "4.0.1",
-    "@vitest/coverage-v8": "2.0.2",
-    "better-typescript-lib": "2.7.0",
+    "@vitest/coverage-v8": "2.0.3",
+    "better-typescript-lib": "2.8.0",
     "eslint": "9.7.0",
-    "husky": "9.0.11",
+    "husky": "9.1.1",
     "lint-staged": "15.2.7",
     "npm-run-all2": "6.2.2",
-    "prettier": "3.3.2",
+    "prettier": "3.3.3",
     "secretlint": "8.2.4",
-    "tsup": "8.1.0",
+    "tsup": "8.2.0",
     "typescript": "5.5.3",
-    "vitest": "2.0.2"
+    "vitest": "2.0.3"
   },
   "packageManager": "pnpm@9.5.0",
   "lint-staged": {
