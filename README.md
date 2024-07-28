@@ -24,7 +24,7 @@ A template project for javascript library (for browsers or Node.js) and/or execu
 
 Testing by [Vitest](https://vitest.dev/)
 
-### `pnpm watch` (in each packages/\* directory)
+### `pnpm watch`
 
 Watching mode of `build`
 

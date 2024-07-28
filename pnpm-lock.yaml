@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      source-map-support:
+        specifier: 0.5.21
+        version: 0.5.21
     devDependencies:
       '@changesets/cli':
         specifier: 2.27.7
