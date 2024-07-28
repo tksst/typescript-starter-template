@@ -14,7 +14,7 @@
   "type": "module",
   "exports": {
     "import": "./dist/lib/index.js",
-    "require": "./dist/lib/index.cjs"
+    "require": "./dist/lib-commonjs/index.cjs"
   },
   "bin": {
     "your-package-name-here": "./dist/bin/index.js"
@@ -23,12 +23,12 @@
     "prepare": "husky",
     "clean": "tss-rmrf ./dist/",
     "build": "run-s --continue-on-error clean build:*",
-    "build:lib": "tsup --config ./tsup.config.lib.mjs",
-    "build:bin": "tsup --config ./tsup.config.bin.mjs",
+    "build:tsc": "tsc",
+    "build:commonjs": "tsup --config ./tsup.config.lib.mjs",
     "prepack": "pnpm build",
     "watch": "npm-run-all clean --parallel --continue-on-error --print-label watch:*",
-    "watch:lib": "pnpm build:lib --watch",
-    "watch:bin": "pnpm build:bin --watch",
+    "watch:lib": "pnpm build:tsc --watch",
+    "watch:commonjs": "pnpm build:commonjs --watch",
     "lint": "run-p --continue-on-error --print-label lint:*",
     "lint:eslint": "eslint --color .",
     "lint:tsc": "tsc --noEmit",
