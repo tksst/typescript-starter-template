@@ -61,12 +61,6 @@ importers:
         specifier: 2.0.4
         version: 2.0.4
 
-  packages/package-you-should-rename:
-    dependencies:
-      source-map-support:
-        specifier: 0.5.21
-        version: 0.5.21
-
 packages:
 
   '@aashutoshrathi/word-wrap@1.2.6':
