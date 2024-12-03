@@ -1,4 +1,9 @@
 {
   "extends": "@tksst/project-configs/tsconfig.json",
-  "include": ["src"]
+  "include": ["src"],
+  "compilerOptions": {
+    "outDir": "dist",
+    "declaration": true,
+    "declarationMap": true
+  }
 }
