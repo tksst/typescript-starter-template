@@ -58,7 +58,7 @@
     "secretlint": "9.0.0",
     "tsup": "8.3.5",
     "typescript": "5.7.2",
-    "vitest": "2.1.8"
+    "vitest": "2.1.9"
   },
   "packageManager": "pnpm@9.14.4",
   "engines": {
