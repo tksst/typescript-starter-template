@@ -57,7 +57,7 @@
     "prettier": "3.4.1",
     "secretlint": "9.0.0",
     "tsup": "8.3.5",
-    "typescript": "5.7.2",
+    "typescript": "7.0.2",
     "vitest": "3.0.5"
   },
   "packageManager": "pnpm@9.14.4",
