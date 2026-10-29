@@ -25,7 +25,7 @@ jobs:
       contents: write
       pull-requests: write
 
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
 
     steps:
       - name: Checkout the source
@@ -40,7 +40,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
         with:
-          node-version: 20.12.0
+          node-version: 26.13.0
           cache: pnpm
 
       - name: Install dependencies
