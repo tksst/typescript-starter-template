@@ -154,4 +154,4 @@ jobs:
       actions: read
     timeout-minutes: 10
     steps:
-      - uses: Kesin11/actions-timeline@3046833d9aacfd7745c5264b7f3af851c3e2a619 # v2.2.1
+      - uses: Kesin11/actions-timeline@d547cc51bd6e8016ac50219eeb29a9eb385a2546 # v4.0.0
