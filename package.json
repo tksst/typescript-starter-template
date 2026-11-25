@@ -55,7 +55,7 @@
     "lint-staged": "15.2.10",
     "npm-run-all2": "7.0.1",
     "prettier": "3.4.1",
-    "secretlint": "9.0.0",
+    "secretlint": "14.1.0",
     "tsup": "8.3.5",
     "typescript": "5.7.2",
     "vitest": "3.0.5"
